@@ -5,8 +5,10 @@ import {clusterName} from '../../../Hasura';
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
 
 const handleGoogleAuth = async(androidClientId, iosClientid, loginCallback, startLoadingIndicator, stopLoadingIndicator) => {
+  GoogleSignin.hasPlayServices({ autoResolve: true });
   GoogleSignin.configure({
     iosClientId: iosClientid,
+    webClientId: androidClientId
   })
   .then(() => {
     GoogleSignin.signIn()
