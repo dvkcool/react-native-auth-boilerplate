@@ -789,14 +789,7 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@23.0.0-alpha.0:
-  version "23.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-23.0.0-alpha.0.tgz#a19c6bff78d7012a2e01e698ae56a8bd3e8cb2f6"
-  dependencies:
-    babel-plugin-istanbul "^4.1.5"
-    babel-preset-jest "^23.0.0-alpha.0"
-
-babel-jest@^22.4.3:
+babel-jest@22.4.3, babel-jest@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-22.4.3.tgz#4b7a0b6041691bbd422ab49b3b73654a49a6627a"
   dependencies:
@@ -832,10 +825,6 @@ babel-plugin-istanbul@^4.1.5:
 babel-plugin-jest-hoist@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-22.4.3.tgz#7d8bcccadc2667f96a0dcc6afe1891875ee6c14a"
-
-babel-plugin-jest-hoist@^23.0.0-alpha.4:
-  version "23.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/babel-plugin-jest-hoist/-/babel-plugin-jest-hoist-23.0.0-alpha.4.tgz#3f32715d54640e37cc62a84a9d3d7eada6a067fc"
 
 babel-plugin-react-transform@^3.0.0:
   version "3.0.0"
@@ -1149,13 +1138,6 @@ babel-preset-jest@^22.4.3:
   resolved "https://registry.yarnpkg.com/babel-preset-jest/-/babel-preset-jest-22.4.3.tgz#e92eef9813b7026ab4ca675799f37419b5a44156"
   dependencies:
     babel-plugin-jest-hoist "^22.4.3"
-    babel-plugin-syntax-object-rest-spread "^6.13.0"
-
-babel-preset-jest@^23.0.0-alpha.0:
-  version "23.0.0-alpha.4"
-  resolved "https://registry.yarnpkg.com/babel-preset-jest/-/babel-preset-jest-23.0.0-alpha.4.tgz#d3080507330e6d23c47dcc366d69f7a330174f70"
-  dependencies:
-    babel-plugin-jest-hoist "^23.0.0-alpha.4"
     babel-plugin-syntax-object-rest-spread "^6.13.0"
 
 babel-preset-react-native@4.0.0, babel-preset-react-native@^4.0.0:
@@ -2920,7 +2902,7 @@ jest-changed-files@^22.4.3:
   dependencies:
     throat "^4.0.0"
 
-jest-cli@^22.4.2:
+jest-cli@^22.4.3:
   version "22.4.3"
   resolved "https://registry.yarnpkg.com/jest-cli/-/jest-cli-22.4.3.tgz#bf16c4a5fb7edc3fa5b9bb7819e34139e88a72c7"
   dependencies:
@@ -3190,12 +3172,12 @@ jest-worker@^22.2.2, jest-worker@^22.4.3:
   dependencies:
     merge-stream "^1.0.1"
 
-jest@22.4.2:
-  version "22.4.2"
-  resolved "https://registry.yarnpkg.com/jest/-/jest-22.4.2.tgz#34012834a49bf1bdd3bc783850ab44e4499afc20"
+jest@22.4.3:
+  version "22.4.3"
+  resolved "https://registry.yarnpkg.com/jest/-/jest-22.4.3.tgz#2261f4b117dc46d9a4a1a673d2150958dee92f16"
   dependencies:
     import-local "^1.0.0"
-    jest-cli "^22.4.2"
+    jest-cli "^22.4.3"
 
 js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
@@ -3823,7 +3805,7 @@ native-base-shoutem-theme@0.2.2:
     lodash "^4.10.1"
     prop-types "^15.5.10"
 
-native-base@^2.3.10:
+native-base@^2.4.1:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/native-base/-/native-base-2.4.1.tgz#2fca37b85a0a0f631c647c6be6837e879c9a9c82"
   dependencies:
@@ -4327,6 +4309,10 @@ react-devtools-core@3.1.0:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-is@^16.3.0:
+  version "16.3.0"
+  resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.0.tgz#f0e8bfd8c09b480dd610b8639d9ed65c13601224"
+
 react-lifecycles-compat@^1.0.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-1.1.2.tgz#6b3a97bae12f421e57771d4715c7ebcd2833c07e"
@@ -4387,7 +4373,7 @@ react-native-safe-area-view@^0.7.0:
   dependencies:
     prop-types "^15.6.0"
 
-react-native-vector-icons@^4.5.0:
+react-native-vector-icons@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-4.6.0.tgz#e4014311ffa6de397d914ffc31b7097a874cc8d5"
   dependencies:
@@ -4403,9 +4389,9 @@ react-native-vector-icons@~4.4.2:
     prop-types "^15.5.10"
     yargs "^8.0.2"
 
-react-native@0.54.2:
-  version "0.54.2"
-  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.54.2.tgz#73786e7bf3f80b0b060ca0bfe5b192f9c2f253da"
+react-native@0.54.4:
+  version "0.54.4"
+  resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.54.4.tgz#19c6c598f6acf04f1c032fe9a1812f0c640fa8b7"
   dependencies:
     absolute-path "^0.0.0"
     art "^0.10.0"
@@ -4466,7 +4452,7 @@ react-native@0.54.2:
     xmldoc "^0.4.0"
     yargs "^9.0.0"
 
-react-navigation@^1.5.8:
+react-navigation@^1.5.9:
   version "1.5.9"
   resolved "https://registry.yarnpkg.com/react-navigation/-/react-navigation-1.5.9.tgz#2740fd1b0056559c1d15f12958f6b30448a2154d"
   dependencies:
@@ -4486,13 +4472,14 @@ react-proxy@^1.1.7:
     lodash "^4.6.1"
     react-deep-force-update "^1.0.0"
 
-react-test-renderer@16.3.0-alpha.2:
-  version "16.3.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.3.0-alpha.2.tgz#20417b295982edd9c2dabc21359b1586f8ec7551"
+react-test-renderer@^16.3.0-alpha.1:
+  version "16.3.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.3.0.tgz#7e88d8cb4c2b95c161b6c6c998991166f74d473e"
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"
     prop-types "^15.6.0"
+    react-is "^16.3.0"
 
 react-timer-mixin@^0.13.2:
   version "0.13.3"
@@ -4512,9 +4499,9 @@ react-tween-state@^0.1.5:
     raf "^3.1.0"
     tween-functions "^1.0.1"
 
-react@16.3.0-alpha.2:
-  version "16.3.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.3.0-alpha.2.tgz#91e2b82bb985b23e7b6555f810e1fd94894afce2"
+react@^16.3.0-alpha.1:
+  version "16.3.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.3.0.tgz#fc5a01c68f91e9b38e92cf83f7b795ebdca8ddff"
   dependencies:
     fbjs "^0.8.16"
     loose-envify "^1.1.0"

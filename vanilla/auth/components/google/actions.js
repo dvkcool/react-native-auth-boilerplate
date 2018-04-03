@@ -3,7 +3,7 @@ import {storeSession} from '../../actions';
 import {clusterName} from '../../../Hasura';
 
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
-/*
+
 const tryGoogleLogin = async (token) => {
   let googleInfo = null;
   try {
@@ -45,7 +45,22 @@ const tryGoogleLogin = async (token) => {
     return e;
   }
 };
-
+const Googlesignin = async(androidClientId, iosClientId) => {
+  GoogleSignin.configure({
+       iosClientId: iosClientid,
+     })
+     .then(() => {
+       GoogleSignin.signIn()
+       .then((user) => {
+         return user;
+       })
+       .catch((err) => {
+         console.log('WRONG SIGNIN', err);
+       })
+       .done();
+     });
+}
+/*
 const handleGoogleAuth = async(androidClientId, iosClientId, loginCallback, startLoadingIndicator, stopLoadingIndicator) => {
   try {
     startLoadingIndicator();
@@ -55,25 +70,7 @@ const handleGoogleAuth = async(androidClientId, iosClientId, loginCallback, star
       scopes: ['profile', 'email']
     });
     if (result.type === 'success') {
-      const googleSignupResp =  await tryGoogleLogin(result.accessToken);
-      if (googleSignupResp.success) {
-        await storeSession({
-          id: googleSignupResp.hasura_id,
-          token: googleSignupResp.auth_token,
-          googleInfo: googleSignupResp.google_profile_info,
-          type: "google"
-        });
-        loginCallback({
-          id: googleSignupResp.hasura_id,
-          token: googleSignupResp.auth_token,
-          googleInfo: googleSignupResp.google_profile_info,
-          type: "google"
-        });
-        return;
-      } else {
-        Alert.alert('Error', googleSignupResp.message);
-        stopLoadingIndicator();
-      }
+
     } else {
       Alert.alert('Error', 'Google login failed');
       stopLoadingIndicator();
@@ -85,20 +82,45 @@ const handleGoogleAuth = async(androidClientId, iosClientId, loginCallback, star
 }
 */
 const handleGoogleAuth = async(androidClientId, iosClientid, loginCallback, startLoadingIndicator, stopLoadingIndicator) => {
-  GoogleSignin.configure({
-    iosClientId: iosClientid,
-  })
-  .then(() => {
-    GoogleSignin.signIn()
-    .then((user) => {
-      Alert.alert("Welcome", "Hey there!, Welcome "+user.givenName+", you are successfully logged in");
-    })
-    .catch((err) => {
-      console.log('WRONG SIGNIN', err);
-    })
-    .done();
-  });
+result="";
+counter = 0;
+  try {
+    startLoadingIndicator();
+   result = await Googlesignin(androidClientId, iosClientid);
+    if (result != null) {
+      console.log("Result till here: "+result);
+      if(result.accessToken != NULL){
+        Alert.alert("Hi me");
+        const googleSignupResp =  await tryGoogleLogin(result.accessToken);
+        if (googleSignupResp.success) {
+          await storeSession({
+            id: googleSignupResp.hasura_id,
+            token: googleSignupResp.auth_token,
+            googleInfo: googleSignupResp.google_profile_info,
+            type: "google"
+          });
+          loginCallback({
+            id: googleSignupResp.hasura_id,
+            token: googleSignupResp.auth_token,
+            googleInfo: googleSignupResp.google_profile_info,
+            type: "google"
+          });
+          Alert.alert("Success");
+          return;
+        } else {
+          Alert.alert('Error here', googleSignupResp.message);
+        }
+      }
+    } else {
+      Alert.alert('Error', 'Google login failed');
+      stopLoadingIndicator();
+    }
+  } catch (e) {
+    console.log(e);
+    stopLoadingIndicator();
+  }
 }
+
 export {
   handleGoogleAuth
 };
