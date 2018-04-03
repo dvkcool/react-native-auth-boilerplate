@@ -7,7 +7,7 @@ import AuthHome from './auth/components/AuthHome';
 import {clusterName} from './Hasura';
 import {fetchSession} from './auth/actions';
 import {home} from './auth/stylesheet';
-
+import {GoogleSignin} from 'react-native-google-signin';
 export default class Index extends React.Component {
 
   static navigationOptions = {
@@ -93,6 +93,14 @@ export default class Index extends React.Component {
   logout = async () => {
     this.setLoadingIndicator();
     this.deleteLocalSession();
+    GoogleSignin.signOut()
+      .then(() => {
+        console.log('sign out');
+      })
+      .catch((err) => {
+        console.log("error");
+      });
+
     try {
       await fetch(`https://auth.${clusterName}.hasura-app.io/v1/user/logout`, {
         'method': 'POST',
