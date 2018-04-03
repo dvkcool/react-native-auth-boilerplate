@@ -7,7 +7,7 @@ export default class AppScreen extends React.Component {
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'white'}}>
         <Image
           style={{width: 220, height: 130, margin: 20, backgroundColor: 'transparent'}}
-          source={{uri: "http://clipground.com/images/yay-clipart-1.jpg"}}
+          source={require('./yay-clipart-1.jpg')}
         />
         <Text
           style={{margin: 20}}
