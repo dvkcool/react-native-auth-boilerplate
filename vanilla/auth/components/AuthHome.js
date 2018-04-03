@@ -267,6 +267,7 @@ googleButton = () => {
             {this.usernameLoginButton()}
             {this.emailLoginButton()}
             {this.mobileLoginButton()}
+            {this.googleButton()}
           </View>
         </Container>
       </Root>

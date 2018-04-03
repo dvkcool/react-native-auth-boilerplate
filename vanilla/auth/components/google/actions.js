@@ -2,7 +2,8 @@ import {Alert} from 'react-native';
 import {storeSession} from '../../actions';
 import {clusterName} from '../../../Hasura';
 
-
+import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
+/*
 const tryGoogleLogin = async (token) => {
   let googleInfo = null;
   try {
@@ -82,7 +83,22 @@ const handleGoogleAuth = async(androidClientId, iosClientId, loginCallback, star
     stopLoadingIndicator();
   }
 }
-
+*/
+const handleGoogleAuth = async(androidClientId, iosClientid, loginCallback, startLoadingIndicator, stopLoadingIndicator) => {
+  GoogleSignin.configure({
+    iosClientId: iosClientid,
+  })
+  .then(() => {
+    GoogleSignin.signIn()
+    .then((user) => {
+      Alert.alert("Welcome", "Hey there!, Welcome "+user.givenName+", you are successfully logged in");
+    })
+    .catch((err) => {
+      console.log('WRONG SIGNIN', err);
+    })
+    .done();
+  });
+}
 export {
   handleGoogleAuth
 };
