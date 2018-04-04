@@ -3,7 +3,7 @@ import {storeSession} from '../../actions';
 import {clusterName} from '../../../Hasura';
 
 import {GoogleSignin, GoogleSigninButton} from 'react-native-google-signin';
- trygooglelogin = async(user)=>{
+ trygooglelogin = async(user, loginCallback)=>{
    const hasuraAuthUrl = `https://auth.${clusterName}.hasura-app.io/v1/signup`;
    const options = {
      "method": "POST",
@@ -50,7 +50,7 @@ const handleGoogleAuth = async(androidClientId, iosClientid, loginCallback, star
   .then(() => {
     GoogleSignin.signIn()
     .then((user) => {
-      trygooglelogin(user);
+      trygooglelogin(user, loginCallback);
     })
     .catch((err) => {
     console.log('WRONG SIGNIN', err);
