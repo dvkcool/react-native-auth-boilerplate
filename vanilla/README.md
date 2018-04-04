@@ -355,7 +355,7 @@ const config = {
 };
 ```
 
-3. Comment out ```vanilla/auth/components/google/actions.js:30:1 - :47:12``` and implement your own method to handle auth token.
+3. Implement your own implementation of handling the "auth_token" in the `tryGooglelogin` function in ``auth/components/google/actions.js``.
 
 ### Demo
 #### Google Login

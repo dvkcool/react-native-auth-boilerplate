@@ -26,15 +26,17 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string></string>
+			<string>com.googleusercontent.apps.461479342368-c94ujm9k0vs6l598emggfcnrganhtk26</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>com.googleusercontent.apps.461479342368-c94ujm9k0vs6l598emggfcnrganhtk26</string>
+			</array>
 		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string></string>
+			<string>com.gmailsignin</string>
 			<key>CFBundleURLSchemes</key>
 			<array/>
 		</dict>
