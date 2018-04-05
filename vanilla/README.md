@@ -305,6 +305,8 @@ There are some configurations you need to add for iOS/android in order to enable
   - Download the ```google-services.json``` file at the end of the process
   - Copy this google-services.json to ```react-native-auth-boilerplate/vanilla/android/app``` folder.
   - Done, that's it! You are good to go for android.
+  - Also if your android stimulator/device lack Google services you will get an error similar to following, to avoid this error simply install google play services:
+    ![gservices](https://github.com/dvkcool/react-native-auth-boilerplate/raw/vanilla-revamp/readme-assets/android/gplayabs.png)
 
 #### With Hasura APIs
 

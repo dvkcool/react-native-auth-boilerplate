@@ -1,4 +1,4 @@
-const clusterName = "horologist80";
+const clusterName = "h34-doghouse98-stg";
 const useHasuraApis = true;
 
 // modify the configuration below only if userHasuraApis = false
