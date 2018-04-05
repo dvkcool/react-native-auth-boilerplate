@@ -321,14 +321,14 @@ defaultProviders:
     defaultRoles: []
 ```
 
-3. Also enter your `android client ID` and `iOS client ID` (same client ID(s) which were generated while configuring your application) as second and third elements of the `google > cliendIds` array respectively.
+2. Also enter your `android client ID` and `iOS client ID` (same client ID(s) which were generated while configuring your application) as second and third elements of the `google > cliendIds` array respectively.
 
 ```yaml
 google:
   clientIds: ["webClientId", "androidClientId", "iOSClientId"]
 ```
 
-4. Apply the configuration to the cluster by running the following commands from the `base` directory
+3. Apply the configuration to the cluster by running the following commands from the `base` directory
 
 ```
 $ git add .
