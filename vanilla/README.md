@@ -312,9 +312,7 @@ There are some configurations you need to add for iOS/android in order to enable
 
 Note: This section assumes that you have already [created a Hasura cluster](#getting-started)
 
-1. Follow the [android](https://github.com/devfd/react-native-google-signin/blob/master/android-guide.md) or [ios](https://github.com/devfd/react-native-google-signin/blob/master/android-guide.md) instructions to configure your client IDs.
-
-2. Open ``conf/auth.yaml`` from the `base` directory and enable google login method by setting `defaultProviders > google > enabled` to `true`. (Don't change anything else unless you are sure about it).
+1. Open ``conf/auth.yaml`` from the `base` directory and enable google login method by setting `defaultProviders > google > enabled` to `true`.
 
 ```yaml
 defaultProviders:
@@ -323,7 +321,7 @@ defaultProviders:
     defaultRoles: []
 ```
 
-3. Also enter your `android client ID` and `iOS client ID` as second and third elements of the `google > cliendIds` array respectively.
+3. Also enter your `android client ID` and `iOS client ID` (same client ID(s) which were generated while configuring your application) as second and third elements of the `google > cliendIds` array respectively.
 
 ```yaml
 google:
@@ -338,7 +336,7 @@ $ git commit -m "Made changes to the conf"
 $ git push hasura master
 ```
 
-#### Without Hasura APIs
+#### Without Hasura API(s)
 
 1. Open `Hasura.js`.
 
@@ -358,8 +356,3 @@ const config = {
 ```
 
 3. Implement your own implementation of handling the "auth_token" in the `tryGooglelogin` function in ``auth/components/google/actions.js``.
-
-### Demo
-#### Google Login
-##### iOS
-![iosgmail](https://github.com/dvkcool/react-native-auth-boilerplate/raw/vanilla-revamp/readme-assets/ios/iosgmail.gif)

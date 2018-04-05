@@ -162,7 +162,7 @@ export default class AuthHome extends React.Component {
     }
     return null;
   }
-
+*/
   googleButton = () => {
     if (this.state.authConf.googleArray && this.state.authConf.googleArray.length >= 2) {
       return (
@@ -175,19 +175,6 @@ export default class AuthHome extends React.Component {
     }
     return null;
   }
-*/
-googleButton = () => {
-  if (this.state.authConf.googleArray && this.state.authConf.googleArray.length >= 2) {
-    return (
-      <View style={styles.homeButtonContainer}>
-        <FontAwesome.Button style={styles.button} name="google" backgroundColor='#db3236' onPress={() => handleGoogleAuth(this.state.authConf.googleArray[1], this.state.authConf.googleArray[2], this.props.loginCallback, this.setLoading, this.unsetLoading)} >
-          <Text style={styles.buttonText}>Login with Google</Text>
-        </FontAwesome.Button>
-      </View>
-    )
-  }
-  return null;
-}
   logoView = () => {
     return (
       <View style={styles.logoContainer}>
@@ -249,9 +236,6 @@ googleButton = () => {
         )
       }
     }
-
-
-
     return (
       <Root>
         <Container>
